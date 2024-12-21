@@ -19,6 +19,8 @@ function ItemList() {
   return (
     <div>
       <h1>Item List</h1>
+      <h1>Item List</h1>
+
       <ul>
         {items.map((item) => (
           <li key={item._id}>
