@@ -9,7 +9,7 @@ function AddItem() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:5000/api/items", { name, description })
+    axios.post("/backend/api/items", { name, description })
       .then(() => navigate("/"))
       .catch((err) => console.error(err));
   };
