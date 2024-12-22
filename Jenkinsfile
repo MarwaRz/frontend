@@ -19,7 +19,7 @@ pipeline {
       }
       steps {
         echo 'building ...'
-        sh 'docker build -t devops/frontend .'
+        sh 'docker build -t devops/backend .'
       }
     }
 
@@ -29,7 +29,7 @@ pipeline {
       }
       steps {
         echo 'tagging ...'
-        sh 'docker tag devops/frontend:latest 313220989398.dkr.ecr.us-east-1.amazonaws.com/devops/frontend:latest'
+        sh 'docker tag devops/backend:latest 313220989398.dkr.ecr.us-east-1.amazonaws.com/devops/backend:latest'
       }
     }
 
@@ -39,16 +39,16 @@ pipeline {
       }
       steps {
         echo 'pushing to registry ...'
-        sh 'docker push 313220989398.dkr.ecr.us-east-1.amazonaws.com/devops/frontend:latest'
+        sh 'docker push 313220989398.dkr.ecr.us-east-1.amazonaws.com/devops/backend:latest'
       }
     }
   }
   post {
     always {
       echo 'This will always run' 
-      echo 'Deploying devopsProject...'
+      echo 'Deploying devops...'
       sh 'docker compose --project-name devops up -d'
-      echo 'devopsProject Deployed'
+      echo 'devops Deployed'
     }
   }
 }
