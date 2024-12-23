@@ -26,8 +26,7 @@ function ItemList() {
   {/* Content */}
   <div style={{ maxWidth: "800px", margin: "20px auto" }}>
     <h2 style={{ textAlign: "center", color: "#333" }}>Item List</h2>
-    <h3 style={{ textAlign: "center", color: "#6200ea" }}>ouuuuuuuuuuuuuuuuuuuuuuuuuuuh</h3>
-    <h3 style={{ textAlign: "center", color: "#6200ea" }}>3leyaaaa</h3>
+   
 
     {/* Item Cards */}
     <ul style={{ listStyle: "none", padding: 0 }}>
