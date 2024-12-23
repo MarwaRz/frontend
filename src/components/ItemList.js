@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function ItemList() {
   const [items, setItems] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -31,12 +33,29 @@ function ItemList() {
           textAlign: "center",
         }}
       >
-        <h1 style={{ margin: 0 }}>Item Manager</h1>
+        <h1 style={{ margin: 0 }}>Task Manager</h1>
       </div>
 
       {/* Content */}
       <div style={{ maxWidth: "800px", margin: "20px auto" }}>
-        <h2 style={{ textAlign: "center", color: "#333" }}>Item List</h2>
+        {/* Add Task Button */}
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
+          <button
+            onClick={() => navigate("/add")}
+            style={{
+              backgroundColor: "#4caf50",
+              color: "white",
+              border: "none",
+              padding: "10px 15px",
+              borderRadius: "5px",
+              cursor: "pointer",
+              fontSize: "1em",
+            }}
+          >
+            Add Task
+          </button>
+          <h2 style={{ textAlign: "center", color: "#333", margin: 0 }}>Task List</h2>
+        </div>
 
         {/* Table */}
         <table
