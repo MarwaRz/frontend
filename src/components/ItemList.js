@@ -15,7 +15,6 @@ function ItemList() {
       .then(() => setItems(items.filter((item) => item._id !== id)))
       .catch((err) => console.error(err));
   };
-
   return (
     <div style={{ padding: "20px", backgroundColor: "#f4f4f9", fontFamily: "Arial, sans-serif" }}>
   {/* Navbar */}
