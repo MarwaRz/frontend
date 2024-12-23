@@ -19,7 +19,7 @@ pipeline {
       }
       steps {
         echo 'building ...'
-        sh 'docker build -t devops/backend .'
+        sh 'docker build -t devops/frontend .'
       }
     }
 
@@ -29,7 +29,7 @@ pipeline {
       }
       steps {
         echo 'tagging ...'
-        sh 'docker tag devops/backend:latest 313220989398.dkr.ecr.us-east-1.amazonaws.com/devops/backend:latest'
+        sh 'docker tag devops/frontend:latest 313220989398.dkr.ecr.us-east-1.amazonaws.com/devops/frontend:latest'
       }
     }
 
@@ -39,7 +39,7 @@ pipeline {
       }
       steps {
         echo 'pushing to registry ...'
-        sh 'docker push 313220989398.dkr.ecr.us-east-1.amazonaws.com/devops/backend:latest'
+        sh 'docker push 313220989398.dkr.ecr.us-east-1.amazonaws.com/devops/frontend:latest'
       }
     }
   }
