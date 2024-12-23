@@ -15,6 +15,18 @@ function AddItem() {
   };
 
   return (
+    <div style={{ padding: "20px", backgroundColor: "#f4f4f9", fontFamily: "Arial, sans-serif" }}>
+    {/* Navbar */}
+    <div
+      style={{
+        backgroundColor: "#6200ea",
+        color: "white",
+        padding: "10px 20px",
+        textAlign: "center",
+      }}
+    >
+      <h1 style={{ margin: 0 }}>Task Manager</h1>
+    </div>
     <form
     onSubmit={handleSubmit}
     style={{
@@ -28,8 +40,25 @@ function AddItem() {
     }}
   >
     <h1 style={{ fontSize: '1.5rem', marginBottom: '1rem', textAlign: 'center', color: '#333' }}>
-      Add Item
+      Add Task
     </h1>
+    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
+          <button
+            onClick={() => navigate("/")}
+            style={{
+              backgroundColor: "#4caf50",
+              color: "white",
+              border: "none",
+              padding: "10px 15px",
+              borderRadius: "5px",
+              cursor: "pointer",
+              fontSize: "1em",
+            }}
+          >
+            Back to list
+          </button>
+          <h2 style={{ textAlign: "center", color: "#333", margin: 0 }}>Task List</h2>
+        </div>
     <input
       type="text"
       placeholder="Name"
@@ -71,9 +100,9 @@ function AddItem() {
         cursor: 'pointer',
       }}
     >
-      Add
+      Add Task
     </button>
-  </form>
+  </form></div>
 );
 }
 
